@@ -1,9 +1,7 @@
-import './App.css';
-
 const App = () => {
 	return (
 		<div className='App'>
-			<h1> My portfolio</h1>
+			<h1> My portfolio 1y</h1>
 		</div>
 	);
 };
