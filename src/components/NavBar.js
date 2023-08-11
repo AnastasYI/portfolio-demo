@@ -30,16 +30,17 @@ const Nav = styled.nav``;
 const NavMenu = styled.div`
 	background: #f3f3f3;
 	width: 100%;
-	height: 90px;
+	min-height: 2em;
+
 	display: flex;
 	overflow: hidden;
 	position: fixed;
-	bottom: 0;
+	top: 0;
 `;
 const Section = styled.div`
 	width: 100%;
 	height: 100%;
-	padding: 30px;
+	padding: 1em;
 	&:hover {
 		background-color: #7f8084;
 	}
@@ -50,7 +51,7 @@ const Circle = styled.span`
 const BigSection = styled.div`
 	flex-basis: 0;
 	flex-grow: 1;
-	border: solid 1px #889293;
-	border-right: 0px;
+	border: solid 0.05em #889293;
+	border-right: 0;
 	text-align: center;
 `;
