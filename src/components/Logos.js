@@ -10,7 +10,6 @@ const Logos = () => {
 					</Imgbtn>
 				);
 			})}
-			s
 		</span>
 	);
 };

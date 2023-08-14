@@ -32,11 +32,11 @@ export const linkIcons = [
 	{
 		id: 'LinkedIn',
 		link: 'www.linkedin.com/in/anastas-yordanov-810996287',
-		logo: '',
+		logo: './images/logos/LinkedIn.png',
 	},
 	{
 		id: 'GitHub',
 		link: 'https://github.com/AnastasYI',
-		logo: '',
+		logo: './images/logos/GitHub.png',
 	},
 ];
