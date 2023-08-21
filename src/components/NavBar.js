@@ -10,7 +10,14 @@ const Navbar = () => {
 					{navData.map((item) => {
 						return (
 							<BigSection key={item.id}>
-								<NavLink to={item.link}>
+								<NavLink
+									to={item.link}
+									style={({ isActive }) =>
+										isActive
+											? { backgroundColor: '#7f8084', color: 'red' }
+											: { backgroundColor: '#f3f3f3', color: `white` }
+									}
+								>
 									<Section>
 										<Circle>º</Circle>
 										{item.id}
@@ -28,13 +35,12 @@ const Navbar = () => {
 export default Navbar;
 const Nav = styled.nav``;
 const NavMenu = styled.div`
-	background: #f3f3f3;
 	width: 100%;
 	min-height: 2em;
 
 	display: flex;
 	overflow: hidden;
-	position: fixed;
+
 	top: 0;
 `;
 const Section = styled.div`

@@ -2,70 +2,90 @@ import styled from 'styled-components';
 import { linkIcons } from '../data';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { useState } from 'react';
+import EmailForm from './EmailForm';
 const About = () => {
 	const [copied, setCopied] = useState(false);
 	return (
 		<AboutC>
-			<Image src='./images/Pictures/ProfilePic.jpg' alt='Profile' />
-			<Name>Anastas Yordanov Ivanov</Name>
-			<Description>Hi, this is a text about me</Description>
-			<Buttons>
-				{linkIcons.map((icon) => {
-					return (
-						<LinkBtn key={icon.id}>
-							<a href={icon.link} target='_blank'>
-								<LinkImg src={icon.logo} alt={icon.id} />
-							</a>
-						</LinkBtn>
-					);
-				})}
-			</Buttons>
-			<MailDiv>
-				<h1>Contact me</h1>
-				<CopyToClipboard
-					text='anastas.yordanov@gmail.com'
-					onCopy={() => setCopied(true)}
-				>
-					<MailIcon>
-						<LinkImg src='./images/logos/Gmail.png' alt='Gmail'></LinkImg>
-					</MailIcon>
-				</CopyToClipboard>
-				{copied ? <div>My email is on your clipboard!</div> : null}
-			</MailDiv>
+			<Hero>
+				<Name>Anastas Yordanov Ivanov</Name>
+				<Image src='./images/Pictures/ProfilePic.jpg' alt='Profile' />
+				<Description>
+					Newcommer into the coding world, adept cyclist and professional cat
+					sitter.
+				</Description>
+				<Buttons>
+					{linkIcons.map((icon) => {
+						return (
+							<LinkBtn key={icon.id}>
+								<Anchor href={icon.link} target='_blank'>
+									<LinkImg src={icon.logo} alt={icon.id} />
+								</Anchor>
+							</LinkBtn>
+						);
+					})}
+				</Buttons>
+				<MailDiv>
+					<CopyToClipboard
+						text='anastas.yordanov@gmail.com'
+						onCopy={() => setCopied(true)}
+					>
+						<MailIcon>
+							<LinkImg src='./images/logos/Gmail.png' alt='Gmail'></LinkImg>
+						</MailIcon>
+					</CopyToClipboard>
+					{copied ? <Alert>My email is on your clipboard</Alert> : null}
+				</MailDiv>
+			</Hero>
+
+			<EmailForm />
 		</AboutC>
 	);
 };
 export default About;
 const AboutC = styled.div`
 	padding: 1em;
+	text-align: center;
 `;
 const Image = styled.img`
 	max-width: 30%;
-	padding: 2em;
-	border: 0.05em solid black;
 `;
 const Description = styled.div`
-	border: 0.05em solid black;
+	border-bottom: 0.05em solid black;
+	margin: 2% 10%;
 `;
 const Name = styled.div`
 	border: 0.05em solid black;
+
+	margin: 2% 10%;
 `;
 const Buttons = styled.ul`
 	display: flex;
 	justify-content: space-around;
-	border: 0.05em solid black;
-	padding: 0.5em;
+	margin: 2% 40%;
 `;
 const LinkBtn = styled.li`
-	border: 0.05em solid black;
+	max-height: 3em;
 `;
 const MailIcon = styled.button`
 	border: none;
 	padding: none;
 	background: none;
 	cursor: pointer;
+	max-width: 3em;
 `;
 const LinkImg = styled.img`
 	max-width: 3em;
 `;
 const MailDiv = styled.div``;
+const Anchor = styled.a``;
+
+const Hero = styled.div`
+	padding: 2em;
+	border: 0.05em solid black;
+	margin: 2%;
+`;
+const Alert = styled.div`
+	color: red;
+	filter: grayscale(40%);
+`;
