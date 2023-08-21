@@ -1,7 +1,9 @@
 import { styled } from 'styled-components';
 import { logos } from '../data';
 import { useState } from 'react';
+import useIsMobile from './UseMobile';
 const Logos = () => {
+	const isMobile = useIsMobile();
 	const defaultState = {
 		HTML: false,
 		JS: false,
@@ -64,6 +66,9 @@ const MappedReturn = styled.div`
 	flex-direction: row;
 	padding: 1em;
 	align-items: center;
+	@media screen and (max-width: 720px) {
+		flex-direction: column;
+	}
 `;
 const MappedReturnToggled = styled.div`
 	display: flex;
@@ -72,7 +77,11 @@ const MappedReturnToggled = styled.div`
 	background-color: #7f8084;
 	align-items: center;
 	color: #f3f3f3;
+	@media screen and (max-width: 720px) {
+		flex-direction: column;
+	}
 `;
+
 const ImgToggled = styled.img`
 	max-width: 7em;
 `;
