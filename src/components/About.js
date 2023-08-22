@@ -67,17 +67,24 @@ const Buttons = styled.ul`
 const LinkBtn = styled.li`
 	max-height: 3em;
 `;
-const MailIcon = styled.button`
+const MailIcon = styled.div`
 	border: none;
 	padding: none;
 	background: none;
 	cursor: pointer;
 	max-width: 3em;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 `;
 const LinkImg = styled.img`
 	max-width: 3em;
 `;
-const MailDiv = styled.div``;
+const MailDiv = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+`;
 const Anchor = styled.a``;
 
 const Hero = styled.div`
